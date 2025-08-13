@@ -44,9 +44,10 @@ fixtures = [
         "filters": {}
     },
     {
-        "doctype": "Custom Field",
+        "doctype": "Print Format",
         "filters": [
-            ["dt", "in", ["Sales Order"]]
+            ["name", "in", ["Sales Invoice"]
+                ]
         ]
     },
     {
