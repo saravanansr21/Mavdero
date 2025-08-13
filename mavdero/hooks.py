@@ -39,12 +39,34 @@ app_license = "mit"
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 fixtures = [
-   {
-    "doctype": "Custom Field",
+    {
+        "doctype": "Custom Field",
+        "filters": {}
+    },
+    {
+        "doctype": "Custom Field",
         "filters": [
-            ["dt", "=", "Customer"]  # dt = "Document Type"
+            ["dt", "in", ["Sales Order"]]
         ]
-   }
+    },
+    {
+        "doctype": "Property Setter",
+        "filters": [
+            ["doc_type", "in", ["Sales Order"]]
+        ]
+    },
+    {
+        "doctype": "Client Script",
+        "filters": [
+            ["dt", "in", ["Sales Order"]]
+        ]
+    },
+    {
+        "doctype": "Server Script",
+        "filters": [
+            ["reference_doctype", "in", ["Sales Order"]]
+        ]
+    }
 ]
 
 
